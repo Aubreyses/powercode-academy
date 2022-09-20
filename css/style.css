@@ -329,6 +329,27 @@ body {
   right: 47px;
 }
 
+.main__nav {
+  display: flex;
+  flex-direction: column;
+}
+.main__nav-link {
+  color: #232F3C;
+  text-transform: uppercase;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 4px;
+  padding-bottom: 36px;
+  transition: 0.2s linear;
+}
+.main__nav-link:last-child {
+  padding-bottom: 0;
+}
+.main__nav-link:hover {
+  color: #EF5B63;
+}
+
 /* Container */
 .container {
   width: 100%;
@@ -341,6 +362,7 @@ body {
 .home {
   width: 100%;
   background-color: #fff;
+  position: relative;
 }
 
 /* Header */
@@ -408,6 +430,7 @@ body {
   position: absolute;
   left: 11px;
   top: 18px;
+  transition: 0.2s linear;
 }
 .header__contacts-menu-burger::after {
   content: "";
@@ -417,6 +440,7 @@ body {
   position: absolute;
   right: 0;
   bottom: 6px;
+  transition: 0.2s linear;
 }
 .header__contacts-menu-burger::before {
   content: "";
@@ -426,15 +450,40 @@ body {
   position: absolute;
   right: 0;
   top: 6px;
+  transition: 0.2s linear;
+}
+.header__contacts-menu-burger.active {
+  background: none;
+  transition: 0.2s linear;
+}
+.header__contacts-menu-burger.active::after {
+  transform: rotate(45deg);
+  top: 0;
+  right: 0;
+  transition: 0.2s linear;
+}
+.header__contacts-menu-burger.active::before {
+  transform: rotate(-45deg);
+  top: 0;
+  right: 0;
+  transition: 0.2s linear;
 }
 .header__contacts-menu:hover {
   background-color: rgba(239, 91, 98, 0.4);
 }
 
 /* Main */
+.main__container {
+  position: relative;
+  min-height: 661px;
+}
+
 .main {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  transform: translateX(-150%);
+  transition: 0.4s linear;
   padding-top: 60px;
 }
 .main__info {
@@ -488,6 +537,11 @@ body {
 }
 .main__info-link-video-icon:hover {
   transform: scale(1.1);
+}
+
+.main.active {
+  transform: translateX(0%);
+  transition: 0.4s linear;
 }
 
 .courses {
@@ -860,6 +914,32 @@ body {
   position: absolute;
   right: 60px;
   top: -100px;
+}
+
+.footer {
+  padding-top: 110px;
+  padding-bottom: 72px;
+}
+.footer__block {
+  width: 100%;
+  background-color: #F5F6F9;
+  border-radius: 10px;
+  padding: 34px 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__block-author {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #232F3C;
+}
+.footer__block-turning {
+  transition: 0.2s linear;
+}
+.footer__block-turning:hover {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -343,8 +343,36 @@ body {
         }
     }// BLock
 } // Questionary
-
 // End independed block
+
+// JavaScript block main
+.main__nav {
+    display: flex;
+    flex-direction: column;
+
+    &-link {
+        color: #232F3C;
+
+        text-transform: uppercase;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 52px;
+        letter-spacing: 4px;
+
+        padding-bottom: 36px;
+
+        transition: .2s linear;
+    }
+
+    &-link:last-child {
+        padding-bottom: 0;
+    }
+
+    &-link:hover {
+        color: #EF5B63;
+    }
+}
+
 
 
 
@@ -361,6 +389,8 @@ body {
 .home {
     width: 100%;
     background-color: #fff;
+
+    position: relative;
 }
 
 /* Header */
@@ -453,6 +483,8 @@ body {
                 position: absolute;
                 left: 11px;
                 top: 18px;
+
+                transition: .2s linear;
             }
 
             &-burger::after {
@@ -465,6 +497,8 @@ body {
                 position: absolute;
                 right: 0;
                 bottom: 6px;
+
+                transition: .2s linear;
             }
 
             &-burger::before {
@@ -477,6 +511,27 @@ body {
                 position: absolute;
                 right: 0;
                 top: 6px;
+
+                transition: .2s linear;
+            }
+
+            &-burger.active {
+                background: none;
+                transition: .2s linear;
+            }
+
+            &-burger.active::after {
+                transform: rotate(45deg);
+                top: 0;
+                right: 0;
+                transition: .2s linear;
+            }
+
+            &-burger.active::before {
+                transform: rotate(-45deg);
+                top: 0;
+                right: 0;
+                transition: .2s linear;
             }
 
             transition: .2s linear;
@@ -490,9 +545,19 @@ body {
 }
 
 /* Main */
+.main__container {
+    position: relative;
+
+    min-height: 661px;
+}
+
 .main {
     display: flex;
     justify-content: space-between;
+    position: absolute;
+
+    transform: translateX(-150%);
+    transition: .4s linear;
 
     padding-top: 60px;
 
@@ -567,7 +632,13 @@ body {
             }
         }
     } // Main__info
-} // Main
+}
+.main.active {
+    transform: translateX(0%);
+    transition: .4s linear;
+}// Main
+
+
 
 // Courses
 .courses {
@@ -1093,6 +1164,40 @@ body {
 
             right: 60px;
             top: -100px;
+        }
+    }
+}// Location
+
+// Footer
+.footer {
+    padding-top: 110px;
+    padding-bottom: 72px;
+
+    &__block {
+        width: 100%;
+
+        background-color: #F5F6F9;
+        border-radius: 10px;
+        padding: 34px 46px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-author {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 32px;
+
+            color: #232F3C;
+        }
+
+        &-turning {
+            transition: .2s linear;
+        }
+
+        &-turning:hover {
+            transform: scale(1.1);
         }
     }
 }
