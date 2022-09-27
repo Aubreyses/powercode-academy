@@ -84,7 +84,6 @@ body {
     max-width: 180px;
 
     display: flex;
-    justify-content: space-around;
     align-items: center;
 
     &__link {
@@ -325,11 +324,14 @@ body {
                 line-height: 18px;
                 text-transform: uppercase;
                 
-                transition: .2s linear;
-            }
 
-            &-button:hover {
-                background-color: rgba(239, 91, 99, 0.8);
+                &-react {
+                    transition: .2s linear;
+                }
+
+                &-react:hover {
+                    background-color: rgba(239, 91, 99, 0.8);
+                }
             }
         }
 
@@ -342,7 +344,33 @@ body {
             right: 47px;
         }
     }// BLock
-} // Questionary
+} // .questionary
+
+// Update for reguest-page
+.reguest__block-grey {
+    color: #333;
+}
+
+.reguest__form {
+    max-width: 100%;
+}
+
+.reguest__border-grey {
+    border: #333 1px solid;
+
+    max-width: 100%;
+}
+
+.reguest__button {
+    transition: .2s linear;
+
+    max-width: 100%;
+}
+
+.reguest__button:hover {
+    background-color: rgb(241 73 82);
+    border: #000 1px solid;
+}
 // End independed block
 
 // JavaScript block main
@@ -552,6 +580,7 @@ body {
 }
 
 .main {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -632,6 +661,14 @@ body {
             }
         }
     } // Main__info
+
+    &__picture-img {
+        object-fit: cover;
+
+        width: 100%;
+        min-width: 500px;
+        height: 100%;
+    }
 }
 .main.active {
     transform: translateX(0%);
@@ -954,20 +991,30 @@ body {
             display: flex;
 
             margin-bottom: 30px;
+            width: 100%;
 
             &-big {
                 width: 100%;
-                max-width: 450px;
-                height: 450px;
+                max-width: 550px;
 
                 margin-right: 30px;
 
                 img {
                     border-radius: 20px;
+
+                    width: 100%;
+                    max-width: 450px;
+                    min-width: 400px;
+                    height: 100%;
+
+                    object-fit: cover;
                 }
             }
 
             &-column {
+                width: 100%;
+                max-width: 210px;
+
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -975,16 +1022,22 @@ body {
                 &-img {
                     width: 100%;
                     max-width: 210px;
-                    height: 210px;
+                    min-width: 120px;
+
+                    margin-bottom: 30px;
 
                     border-radius: 20px;
+                }
+
+                &-img:last-child {
+                    margin-bottom: 0;
                 }
             }
 
             &-img-small {
                     width: 100%;
                     max-width: 210px;
-                    height: 210px;
+                    min-width: 120px;
 
                     border-radius: 20px;
 
@@ -994,7 +1047,7 @@ body {
             &-img-long {
                     width: 100%;
                     max-width: 450px;
-                    height: 210px;
+                    min-width: 400px;
 
                     border-radius: 20px;
             }
@@ -1014,6 +1067,10 @@ body {
             margin-bottom: 0;
         }
     //Reverse
+    }
+
+    &__block:last-child {
+        margin-right: 0;
     }
 }
 
@@ -1202,6 +1259,215 @@ body {
     }
 }
 
-   
+
+// Questionary page 
+.header__reguest-contacts-menu {
+    width: 40px;
+    height: 40px;
+
+    background-color: #fff;
+
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    position: relative;
+
+    transition: .2s linear;
+
+    &-burger { 
+        text-decoration: none;
+
+        position: relative;
+    }
+
+    &-burger::after {
+        content: "";
+
+        width: 18px;
+        height: 2px;
+        background-color: #000;
+
+        position: absolute;
+        transform: rotate(45deg);
+        right: 10px;
+        top: -1px;
+    }
+
+    &-burger::before {
+        content: "";
+
+        width: 18px;
+        height: 2px;
+        background-color: #000;
+
+        position: absolute;
+        transform: rotate(-45deg);
+        right: 10px;
+        top: -1px;
+    }
+}
+
+.header__reguest-contacts-menu:hover {
+    background-color: rgba(239, 91, 98, 0.4);
+}
+
+.main__reguest {
+    width: 100%;
+
+    display: none;
+    justify-content: space-between;
+
+    padding-top: 60px;
+
+    &-padding {
+        padding-top: 120px;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: center;
+
+        &-title {
+            color: #232F3C;
+
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 76px;
+            letter-spacing: 5px;
+        }
+
+        &-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 48px;
+
+            padding-top: 26px;
+            padding-bottom: 36px;
+        }
+
+        &-button {
+            width: 100%;
+            max-width: 288px;
+            height: 60px;
+
+            margin: 0 auto;
+            padding: 21px 0;
+
+            border-radius: 10px;
+
+            background-color: rgb(239, 91, 99);
+            color: #fff;
+
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 18px;
+            text-transform: uppercase;
+
+            transition: .2s linear;
+        }
+
+        &-button:hover {
+            background-color: rgb(241 73 82);
+            border: #000 1px solid;
+        }
+    }
+}
+
+.main__reguest.active {
+    display: flex;
+}
+
+.main__questionary {
+    background-color: #fff;
+
+    position: static;
+
+    height: auto;
+    max-width: 572px;
+}
+
+.reguest__block {
+    &-title {
+        font-size: 42px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &-text {
+        font-size: 16px;
+    }
+}
 
 
+
+// Media //
+@media (max-width: 1360px) {
+    // Collage
+    .collage__block-line-img-long {
+        min-width: 350px;
+    }
+
+    .collage__block-line-big {
+        img {
+            min-width: 350px;
+        }
+    }
+}
+
+@media (max-width: 1210px) {
+    // Collage
+     .collage__block-line-img-long {
+        min-width: 320px;
+    }
+
+    .collage__block-line-big {
+        img {
+            min-width: 300px;
+        }
+    }
+
+}
+
+@media (max-width: 1100px) {
+    // Collage
+    .collage__block-line-img-long {
+        min-width: 290px;
+    }
+
+    .collage__block-line-big {
+        img {
+            min-width: 250px;
+        }
+    }
+
+}
+
+@media (max-width: 990px) {
+    // Home
+    .header__contacts-registr {
+        display: none;
+    }
+
+
+    // Collage
+    .collage__block-line-img-long {
+        min-width: 245px;
+    }
+
+    .collage__block-line-big {
+        img {
+            min-width: 245px;
+        }
+    }
+}
+
+@media (max-width: 770px) {
+
+}
