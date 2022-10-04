@@ -110,6 +110,8 @@ body {
 
     font-size: 46px;
     font-weight: bold;
+    letter-spacing: 4px;
+    line-height: 36px;
 
     padding-top: 50px;
     padding-bottom: 50px;
@@ -119,6 +121,7 @@ body {
 .block {
     width: 100%;
     max-width: 330px;
+    min-width: 250px;
     min-height: 250px;
 
     color: #fff;
@@ -188,6 +191,8 @@ body {
     &__name {
         font-size: 35px;
         font-weight: bold;
+
+        text-transform: uppercase;
     }
 }
 
@@ -505,7 +510,7 @@ body {
                 content: "";
 
                 width: 18px;
-                height: 1px;
+                height: 2px;
                 background-color: #000;
                 
                 position: absolute;
@@ -666,14 +671,20 @@ body {
         object-fit: cover;
 
         width: 100%;
-        min-width: 500px;
+        min-width: 410px;
         height: 100%;
     }
 }
 .main.active {
     transform: translateX(0%);
     transition: .4s linear;
-}// Main
+    align-items: center;
+}
+
+.nav__social {
+    display: none;
+}
+// Main
 
 
 
@@ -697,6 +708,10 @@ body {
             font-weight: 700;
 
             color: #333;
+
+            span {
+                color: #4FCC97;
+            }
         }
 
         &-regime {
@@ -1408,7 +1423,39 @@ body {
 
 
 // Media //
+@media (max-width: 1420px) {
+    // Help
+    .help__registration {
+        background: #4FCC97;
+        border-radius: 20px;
+
+        justify-content: center;
+        text-align: center;
+
+        &-container {
+            padding: 30px 15px 36px 15px;
+        }
+    }
+
+    .help__img {
+        display: none;
+    }
+}
+
 @media (max-width: 1360px) {
+    // Main 
+    .main__nav-link {
+        font-size: 38px;
+        line-height: 46px;
+
+        padding-bottom: 30px;
+    }
+
+    // Courses 
+    .block__name {
+        font-size: 30px;
+    }
+
     // Collage
     .collage__block-line-img-long {
         min-width: 350px;
@@ -1422,6 +1469,15 @@ body {
 }
 
 @media (max-width: 1210px) {
+    // Main
+    .main__info-suptitle {
+        font-size: 21px;
+    }
+
+    .main__info-title {
+        font-size: 58px;
+    }
+
     // Collage
      .collage__block-line-img-long {
         min-width: 320px;
@@ -1433,9 +1489,52 @@ body {
         }
     }
 
+    // Courses
+    .block {
+        min-height: 220px;
+        min-width: 220px;
+
+        &__name {
+            font-size: 27px;
+        }
+    }
+
 }
 
 @media (max-width: 1100px) {
+    // Main
+    .main__container {
+        min-height: 600px;
+    }
+
+    .main__info-suptitle {
+        font-size: 19px;
+    }
+
+    .main__info-title {
+        font-size: 52px;
+    }
+
+    .main__info-link-btn {
+        width: 130px;
+    }
+
+    .main__info-link-video {
+        padding-left: 15px;
+
+        &-text {
+            font-size: 12px;
+            padding-right: 15px;
+        }
+    }
+
+    .main__nav-link {
+        font-size: 34px;
+        line-height: 38px;
+
+        padding-bottom: 26px;
+    }
+
     // Collage
     .collage__block-line-img-long {
         min-width: 290px;
@@ -1447,14 +1546,118 @@ body {
         }
     }
 
+    // Courses
+    .block {
+        min-height: 200px;
+        min-width: 200px;
+
+        &__name {
+            font-size: 24px;
+        }
+    }
+
+    .one {
+        background-size: 200px;
+    }
+
+    .two {
+        background-size: 200px;
+    }
+
+    .three {
+        background-size: 175px;
+    }
+
+    .four {
+        background-size: 200px;
+    }
+
 }
 
 @media (max-width: 990px) {
+    //Title 
+    .title {
+        text-align: center;
+    }
+
     // Home
     .header__contacts-registr {
         display: none;
     }
 
+    // Main
+    .main__container {
+        min-height: 520px;
+    }
+
+    .main__info-suptitle {
+        font-size: 18px;
+    }
+
+    .main__info-title {
+        font-size: 48px;
+    }
+
+    .main__info-link-btn {
+        width: 120px;
+        font-size: 12px;
+    }
+
+    .main__nav-link {
+        font-size: 32px;
+        line-height: 34px;
+
+        padding-bottom: 24px;
+    }
+
+    // Corses 
+    .courses__version {
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .courses__info-block {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        margin-bottom: 0;
+    }
+
+    .block {
+        min-height: 250px;
+        margin-right: 0;
+
+        margin-bottom: 30px;
+
+        &__name {
+            font-size: 32px;
+        }
+    }
+
+    .one {
+        background-size: 250px;
+    }
+
+    .two {
+        background-size: 250px;
+    }
+
+    .three {
+        background-size: 250px;
+    }
+
+    .four {
+        background-size: 250px;
+    }
+
+    // Salary
+    .salary__container {
+        flex-direction: column;
+    }
+
+    .salary__info {
+        margin: 0 auto 30px auto;
+    }
 
     // Collage
     .collage__block-line-img-long {
@@ -1462,12 +1665,407 @@ body {
     }
 
     .collage__block-line-big {
+        
         img {
             min-width: 245px;
         }
     }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 900px) {
+    // Main
+    .main__container {
+        min-height: 450px;
+    }
+
+    .main__nav-link {
+        font-size: 27px;
+        line-height: 31px;
+
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    // Main
+    .main__container {
+        min-height: 430px;
+    }
+
+    .main__nav-link {
+        font-size: 26px;
+        line-height: 26px;
+
+        padding-bottom: 18px;
+    }
+
+    // Courses 
+    .block {
+        max-width: 310px;
+    }
+
+    // Help 
+    .help__registration-title {
+        font-size: 60px;
+    }
+
+    .help__registration-text {
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 770px)  {
+    // Title 
+    .title {
+        font-size: 24px;
+
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    // Home
+        //Header
+        .header__logo-text {
+            display: none;
+        }
+
+        .social {
+            display: none;
+        }
+
+        // Main
+        .main {
+            justify-content: center;
+
+            padding-top: 100px;
+            
+            background: url(../img/menu/form-tel/bc.png) center no-repeat;
+
+            &__container {
+                min-height: 580px;
+            }
+
+            &__nav-img {
+                background: url(../img/menu/form-tel/bc-nav.png) center no-repeat;
+                background-position-y: 10%;
+
+                padding-top: 60px;
+
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            &__picture-img {
+                display: none;
+            }
+
+            &__info {
+                text-align: center;
+                
+                &-title {
+                    font-size: 38px;
+                    line-height: 48px;
+                    letter-spacing: 5px;
+
+                    padding-bottom: 46px;
+                }
+
+                &-link {
+                    flex-direction: column;
+
+                    &-btn {
+                        width: 220px;
+                        height: 60px;
+
+                        font-size: 18px;
+
+                        margin-bottom: 40px;
+                    }
+
+                    &-video {
+                        flex-direction: column-reverse;
+
+                        padding-left: 0;
+
+                        &-text {
+                            padding-right: 0;
+                            padding-top: 10px;
+
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+
+            &__nav {
+                margin-bottom: 78px;
+
+                &-link {
+                    font-size: 34px;
+                    line-height: 40px;
+                    letter-spacing: 4px;
+    
+                    padding-bottom: 26px;
+                }
+            }
+
+        }
+
+        .main.active {
+            align-items: flex-start;
+        }
+
+        .nav__social {
+            display: flex;
+        }
+
+        .social__link {
+            margin-right: 30px;
+
+            &-img {
+                width: 25px;
+            }
+        }
+        
+    // Courses
+    .courses {
+        padding-bottom: 70px;
+
+        &__version {
+            flex-direction: column-reverse;
+
+            &-regime {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .block {
+        max-width: 330px;
+
+        margin: 0 25px 30px 25px;
+    }
+
+    .block:last-child {
+        margin-right: 25px;
+    }
+
+    // Help 
+    .help {
+        padding-bottom: 40px;
+
+        &__registration-title {
+            font-size: 46px;
+        }
+
+        &__registration-text {
+            font-size: 21px;
+        }
+    }
+
+    // Salary 
+    .salary__info-position-rang-name {
+        font-size: 46px;
+    }
+
+    .salary__info-position-rang-time {
+        font-size: 16px;
+    }
+
+    .salary__info-position-income {
+        font-size: 16px;
+    }
+
+    .salary__info-position-income-bold {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 575px) {
+    // Container 
+    .container {
+        padding: 0 20px;
+    }
+
+    // Home
+        // Main 
+        .main {
+            background-size: 87%;
+
+            &__container {
+                min-height: 530px;
+            }
+        }
+
+        .main__info-suptitle {
+            font-size: 15px;
+        }
+
+        .main__info-title {
+            font-size: 34px;
+        }
+
+        .main__info-link-video-text {
+            font-size: 12px;
+        }
+
+        // Active nav
+        .main__nav-img {
+            background-size: 87%;
+        }
+
+        .main__nav-link {
+            font-size: 26px;
+
+            padding-bottom: 20px;
+        }
+
+        .social__link-img {
+            width: 23px;
+        }
+
+    // Help 
+    .help__registration-title {
+        font-size: 28px;
+
+        p {
+            padding-top: 15px;
+        }
+    }
+
+    .help__registration-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    // Home
+        // Main 
+        .main__container {
+            min-height: 520px;
+        }
+
+        .main__nav-link {
+            font-size: 22px;
+            letter-spacing: 3px;
+
+            padding-bottom: 15px;
+        }
+
+        .social__link-img {
+            width: 20px;
+        }
+
+    // Courses 
+    .block__name {
+        font-size: 30px;
+    }
+
+    .courses__version-regime {
+        flex-direction: column;
+
+        &-btn {
+            margin-bottom: 10px;
+            margin-right: 0;
+
+            font-size: 12px;
+        }
+
+        &-btn:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Salary 
+    .salary__info {
+        margin-bottom: 20px;
+    }
+
+    .salary__info-position-rang-name {
+        font-size: 44px;
+    }
+
+    .salary__info-position-rang-time {
+        font-size: 14px;
+    }
+
+    .salary__info-position-income {
+        font-size: 14px;
+    }
+
+    .salary__info-position-income-bold {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 380px) {
+    // Home
+        // Header
+        .header__logo-icon-img {
+            width: 45px;
+        }
+
+        .header__contacts-tel {
+            padding-right: 15px;
+
+            font-size: 12px;
+        }
+
+        // Main 
+        .main__nav-link {
+            font-size: 18px;
+        }
+
+    // Courses 
+    .block {
+        min-height: 210px;
+
+        &__name {
+            font-size: 22px;
+        }
+    }
+
+    .one {
+        background-size: 200px;
+    }
+
+    .two {
+        background-size: 200px;
+    }
+
+    .three {
+        background-size: 200px;
+    }
+
+    .four {
+        background-size: 200px;
+    }
+
+    // Help 
+    .help__registration-title {
+        font-size: 24px;
+    }
+
+    // Salary 
+    .salary__info {
+        margin-bottom: 10px;
+    }
+
+    .salary__info-position-rang-name {
+        font-size: 36px;
+    }
+
+    .salary__info-position-rang-time {
+        font-size: 12px;
+    }
+
+    .salary__info-position-income {
+        font-size: 12px;
+    }
+
+    .salary__info-position-income-bold {
+        font-size: 24px;
+    }
 
 }

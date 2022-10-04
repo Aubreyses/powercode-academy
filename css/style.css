@@ -149,6 +149,8 @@ body {
   color: #232F3C;
   font-size: 46px;
   font-weight: bold;
+  letter-spacing: 4px;
+  line-height: 36px;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -157,6 +159,7 @@ body {
 .block {
   width: 100%;
   max-width: 330px;
+  min-width: 250px;
   min-height: 250px;
   color: #fff;
   background-color: #232F3C;
@@ -205,6 +208,7 @@ body {
 .block__name {
   font-size: 35px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .block:last-child {
@@ -449,7 +453,7 @@ body {
   text-decoration: none;
   content: "";
   width: 18px;
-  height: 1px;
+  height: 2px;
   background-color: #000;
   position: absolute;
   left: 11px;
@@ -566,13 +570,18 @@ body {
 .main__picture-img {
   object-fit: cover;
   width: 100%;
-  min-width: 500px;
+  min-width: 410px;
   height: 100%;
 }
 
 .main.active {
   transform: translateX(0%);
   transition: 0.4s linear;
+  align-items: center;
+}
+
+.nav__social {
+  display: none;
 }
 
 .courses {
@@ -590,6 +599,9 @@ body {
   font-size: 19px;
   font-weight: 700;
   color: #333;
+}
+.courses__version-title span {
+  color: #4FCC97;
 }
 .courses__version-regime {
   display: flex;
@@ -1097,7 +1109,32 @@ body {
   font-size: 16px;
 }
 
+@media (max-width: 1420px) {
+  .help__registration {
+    background: #4FCC97;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+  .help__registration-container {
+    padding: 30px 15px 36px 15px;
+  }
+
+  .help__img {
+    display: none;
+  }
+}
 @media (max-width: 1360px) {
+  .main__nav-link {
+    font-size: 38px;
+    line-height: 46px;
+    padding-bottom: 30px;
+  }
+
+  .block__name {
+    font-size: 30px;
+  }
+
   .collage__block-line-img-long {
     min-width: 350px;
   }
@@ -1107,6 +1144,14 @@ body {
   }
 }
 @media (max-width: 1210px) {
+  .main__info-suptitle {
+    font-size: 21px;
+  }
+
+  .main__info-title {
+    font-size: 58px;
+  }
+
   .collage__block-line-img-long {
     min-width: 320px;
   }
@@ -1114,8 +1159,46 @@ body {
   .collage__block-line-big img {
     min-width: 300px;
   }
+
+  .block {
+    min-height: 220px;
+    min-width: 220px;
+  }
+  .block__name {
+    font-size: 27px;
+  }
 }
 @media (max-width: 1100px) {
+  .main__container {
+    min-height: 600px;
+  }
+
+  .main__info-suptitle {
+    font-size: 19px;
+  }
+
+  .main__info-title {
+    font-size: 52px;
+  }
+
+  .main__info-link-btn {
+    width: 130px;
+  }
+
+  .main__info-link-video {
+    padding-left: 15px;
+  }
+  .main__info-link-video-text {
+    font-size: 12px;
+    padding-right: 15px;
+  }
+
+  .main__nav-link {
+    font-size: 34px;
+    line-height: 38px;
+    padding-bottom: 26px;
+  }
+
   .collage__block-line-img-long {
     min-width: 290px;
   }
@@ -1123,10 +1206,105 @@ body {
   .collage__block-line-big img {
     min-width: 250px;
   }
+
+  .block {
+    min-height: 200px;
+    min-width: 200px;
+  }
+  .block__name {
+    font-size: 24px;
+  }
+
+  .one {
+    background-size: 200px;
+  }
+
+  .two {
+    background-size: 200px;
+  }
+
+  .three {
+    background-size: 175px;
+  }
+
+  .four {
+    background-size: 200px;
+  }
 }
 @media (max-width: 990px) {
+  .title {
+    text-align: center;
+  }
+
   .header__contacts-registr {
     display: none;
+  }
+
+  .main__container {
+    min-height: 520px;
+  }
+
+  .main__info-suptitle {
+    font-size: 18px;
+  }
+
+  .main__info-title {
+    font-size: 48px;
+  }
+
+  .main__info-link-btn {
+    width: 120px;
+    font-size: 12px;
+  }
+
+  .main__nav-link {
+    font-size: 32px;
+    line-height: 34px;
+    padding-bottom: 24px;
+  }
+
+  .courses__version {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .courses__info-block {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 0;
+  }
+
+  .block {
+    min-height: 250px;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .block__name {
+    font-size: 32px;
+  }
+
+  .one {
+    background-size: 250px;
+  }
+
+  .two {
+    background-size: 250px;
+  }
+
+  .three {
+    background-size: 250px;
+  }
+
+  .four {
+    background-size: 250px;
+  }
+
+  .salary__container {
+    flex-direction: column;
+  }
+
+  .salary__info {
+    margin: 0 auto 30px auto;
   }
 
   .collage__block-line-img-long {
@@ -1135,6 +1313,330 @@ body {
 
   .collage__block-line-big img {
     min-width: 245px;
+  }
+}
+@media (max-width: 900px) {
+  .main__container {
+    min-height: 450px;
+  }
+
+  .main__nav-link {
+    font-size: 27px;
+    line-height: 31px;
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 850px) {
+  .main__container {
+    min-height: 430px;
+  }
+
+  .main__nav-link {
+    font-size: 26px;
+    line-height: 26px;
+    padding-bottom: 18px;
+  }
+
+  .block {
+    max-width: 310px;
+  }
+
+  .help__registration-title {
+    font-size: 60px;
+  }
+
+  .help__registration-text {
+    font-size: 24px;
+  }
+}
+@media (max-width: 770px) {
+  .title {
+    font-size: 24px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .header__logo-text {
+    display: none;
+  }
+
+  .social {
+    display: none;
+  }
+
+  .main {
+    justify-content: center;
+    padding-top: 100px;
+    background: url(../img/menu/form-tel/bc.png) center no-repeat;
+  }
+  .main__container {
+    min-height: 580px;
+  }
+  .main__nav-img {
+    background: url(../img/menu/form-tel/bc-nav.png) center no-repeat;
+    background-position-y: 10%;
+    padding-top: 60px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .main__picture-img {
+    display: none;
+  }
+  .main__info {
+    text-align: center;
+  }
+  .main__info-title {
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: 5px;
+    padding-bottom: 46px;
+  }
+  .main__info-link {
+    flex-direction: column;
+  }
+  .main__info-link-btn {
+    width: 220px;
+    height: 60px;
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .main__info-link-video {
+    flex-direction: column-reverse;
+    padding-left: 0;
+  }
+  .main__info-link-video-text {
+    padding-right: 0;
+    padding-top: 10px;
+    font-size: 16px;
+  }
+  .main__nav {
+    margin-bottom: 78px;
+  }
+  .main__nav-link {
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 4px;
+    padding-bottom: 26px;
+  }
+
+  .main.active {
+    align-items: flex-start;
+  }
+
+  .nav__social {
+    display: flex;
+  }
+
+  .social__link {
+    margin-right: 30px;
+  }
+  .social__link-img {
+    width: 25px;
+  }
+
+  .courses {
+    padding-bottom: 70px;
+  }
+  .courses__version {
+    flex-direction: column-reverse;
+  }
+  .courses__version-regime {
+    margin-bottom: 30px;
+  }
+
+  .block {
+    max-width: 330px;
+    margin: 0 25px 30px 25px;
+  }
+
+  .block:last-child {
+    margin-right: 25px;
+  }
+
+  .help {
+    padding-bottom: 40px;
+  }
+  .help__registration-title {
+    font-size: 46px;
+  }
+  .help__registration-text {
+    font-size: 21px;
+  }
+
+  .salary__info-position-rang-name {
+    font-size: 46px;
+  }
+
+  .salary__info-position-rang-time {
+    font-size: 16px;
+  }
+
+  .salary__info-position-income {
+    font-size: 16px;
+  }
+
+  .salary__info-position-income-bold {
+    font-size: 36px;
+  }
+}
+@media (max-width: 575px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .main {
+    background-size: 87%;
+  }
+  .main__container {
+    min-height: 530px;
+  }
+
+  .main__info-suptitle {
+    font-size: 15px;
+  }
+
+  .main__info-title {
+    font-size: 34px;
+  }
+
+  .main__info-link-video-text {
+    font-size: 12px;
+  }
+
+  .main__nav-img {
+    background-size: 87%;
+  }
+
+  .main__nav-link {
+    font-size: 26px;
+    padding-bottom: 20px;
+  }
+
+  .social__link-img {
+    width: 23px;
+  }
+
+  .help__registration-title {
+    font-size: 28px;
+  }
+  .help__registration-title p {
+    padding-top: 15px;
+  }
+
+  .help__registration-text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 450px) {
+  .main__container {
+    min-height: 520px;
+  }
+
+  .main__nav-link {
+    font-size: 22px;
+    letter-spacing: 3px;
+    padding-bottom: 15px;
+  }
+
+  .social__link-img {
+    width: 20px;
+  }
+
+  .block__name {
+    font-size: 30px;
+  }
+
+  .courses__version-regime {
+    flex-direction: column;
+  }
+  .courses__version-regime-btn {
+    margin-bottom: 10px;
+    margin-right: 0;
+    font-size: 12px;
+  }
+  .courses__version-regime-btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .salary__info {
+    margin-bottom: 20px;
+  }
+
+  .salary__info-position-rang-name {
+    font-size: 44px;
+  }
+
+  .salary__info-position-rang-time {
+    font-size: 14px;
+  }
+
+  .salary__info-position-income {
+    font-size: 14px;
+  }
+
+  .salary__info-position-income-bold {
+    font-size: 34px;
+  }
+}
+@media (max-width: 380px) {
+  .header__logo-icon-img {
+    width: 45px;
+  }
+
+  .header__contacts-tel {
+    padding-right: 15px;
+    font-size: 12px;
+  }
+
+  .main__nav-link {
+    font-size: 18px;
+  }
+
+  .block {
+    min-height: 210px;
+  }
+  .block__name {
+    font-size: 22px;
+  }
+
+  .one {
+    background-size: 200px;
+  }
+
+  .two {
+    background-size: 200px;
+  }
+
+  .three {
+    background-size: 200px;
+  }
+
+  .four {
+    background-size: 200px;
+  }
+
+  .help__registration-title {
+    font-size: 24px;
+  }
+
+  .salary__info {
+    margin-bottom: 10px;
+  }
+
+  .salary__info-position-rang-name {
+    font-size: 36px;
+  }
+
+  .salary__info-position-rang-time {
+    font-size: 12px;
+  }
+
+  .salary__info-position-income {
+    font-size: 12px;
+  }
+
+  .salary__info-position-income-bold {
+    font-size: 24px;
   }
 }
 
