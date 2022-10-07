@@ -836,6 +836,9 @@ body {
             color: #4FCC97;
 
             background: url(../img/salary/junior.png) center no-repeat;
+            background-position-x: 100%;
+            background-position-y: 100%;
+            background-size: 70%;
 
             border: solid 1px #4FCC97;
 
@@ -846,6 +849,9 @@ body {
             color: #55CBDC;
 
             background: url(../img/salary/middle.png) center no-repeat;
+            background-position-x: 100%;
+            background-position-y: 100%;
+            background-size: 70%;
 
             border: solid 1px #55CBDC;
 
@@ -856,6 +862,9 @@ body {
             color: #EF5B63;
 
             background: url(../img/salary/senior.png) center no-repeat;
+            background-position-x: 100%;
+            background-position-y: 100%;
+            background-size: 65%;
 
             border: solid 1px #EF5B63;
 
@@ -919,11 +928,12 @@ body {
 
     &__container {
         display: flex;
+        justify-content: space-around;
     }
 
     &__info {
         width: 100%;
-        max-width: 800px;
+        max-width: 845px;
 
         padding-bottom: 26px;
 
@@ -947,6 +957,7 @@ body {
             &-text {
                 font-size: 24px;
                 font-weight: 500;
+                line-height: 30px;
 
                 &-line {
                     padding-bottom: 20px;
@@ -983,6 +994,11 @@ body {
 
             padding-left: 36px;
         }
+    }
+
+    &__picture-img {
+        width: 100%;
+        max-width: 539px;
     }
 }
 
@@ -1440,6 +1456,23 @@ body {
     .help__img {
         display: none;
     }
+
+    // About us
+    .about-us__info {
+        max-width: 780px;
+    }
+
+    .about-us__info-definition-title {
+        font-size: 48px;
+    }
+
+    .about-us__info-definition-text {
+        font-size: 20px;
+    }
+
+    .about-us__info-main {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 1360px) {
@@ -1465,6 +1498,23 @@ body {
         img {
             min-width: 350px;
         }
+    }
+
+    // About us
+    .about-us__info {
+        max-width: 700px;
+    }
+
+    .about-us__info-definition-title {
+        font-size: 44px;
+    }
+
+    .about-us__info-definition-text {
+        font-size: 18px;
+    }
+
+    .about-us__info-main {
+        font-size: 18px;
     }
 }
 
@@ -1497,6 +1547,27 @@ body {
         &__name {
             font-size: 27px;
         }
+    }
+
+    // About us
+    .about-us__info {
+        max-width: 580px;
+    }
+
+    .about-us__info-definition-title {
+        font-size: 40px;
+    }
+
+    .about-us__info-definition-text {
+        font-size: 18px;
+    }
+
+    .about-us__info-main {
+        font-size: 18px;
+    }
+
+    .about-us__picture-img {
+        max-width: 460px;
     }
 
 }
@@ -1572,6 +1643,45 @@ body {
         background-size: 200px;
     }
 
+    // About us
+    .about-us {
+        padding-top: 0;
+    }
+
+    .about-us__container {
+        justify-content: center;
+    }
+
+    .about-us__info-definition {
+        padding-bottom: 20px;
+
+        &-title {
+            text-align: left;
+    
+            padding-bottom: 20px;
+        }
+
+        &-text {
+            font-size: 20px;
+    
+            &-line {
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .about-us__info-main {
+        font-size: 20px;
+    }
+
+    .about-us__info {
+        max-width: 80%;
+    }
+
+    .about-us__picture-img {
+        display: none;
+    }
+
 }
 
 @media (max-width: 990px) {
@@ -1643,7 +1753,7 @@ body {
     }
 
     .three {
-        background-size: 250px;
+        background-size: 200px;
     }
 
     .four {
@@ -1669,6 +1779,11 @@ body {
         img {
             min-width: 245px;
         }
+    }
+
+    // About us 
+    .about-us__info-definition-title {
+        text-align: left;
     }
 }
 
@@ -1880,6 +1995,34 @@ body {
     .salary__info-position-income-bold {
         font-size: 36px;
     }
+
+    // About us
+    .about-us__info-definition {
+        padding-top: 70px;
+        padding-bottom: 15px;
+        padding-left: 30px;
+
+        &-title {
+            text-align: left;
+
+            padding-top: 0;
+            padding-bottom: 15px;
+        }
+
+        &-text {
+            font-size: 18px;
+    
+            &-line {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .about-us__info-main {
+        font-size: 18px;
+
+        padding-left: 30px;
+    }
 }
 
 @media (max-width: 575px) {
@@ -1937,6 +2080,20 @@ body {
     .help__registration-text {
         font-size: 18px;
     }
+
+    // Salary 
+    .salary__info {
+        max-height: 350px;
+
+        &-position-rang {
+            padding-bottom: 140px;
+        }
+    }
+
+    // About us
+    .about-us__info {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 450px) {
@@ -1980,6 +2137,27 @@ body {
     // Salary 
     .salary__info {
         margin-bottom: 20px;
+
+        max-height: 310px;
+
+        &-position-rang {
+            padding-bottom: 108px;
+        }
+
+        &-green {
+            background-size: 75%;
+            background-position-x: 135%;
+        }
+
+        &-blue {
+            background-size: 75%;
+            background-position-x: 135%;
+        }
+
+        &-red {
+            background-size: 68%;
+            background-position-x: 135%;
+        }
     }
 
     .salary__info-position-rang-name {
@@ -2019,7 +2197,7 @@ body {
 
     // Courses 
     .block {
-        min-height: 210px;
+        min-height: 180px;
 
         &__name {
             font-size: 22px;
@@ -2031,15 +2209,15 @@ body {
     }
 
     .two {
-        background-size: 200px;
+        background-size: 150px;
     }
 
     .three {
-        background-size: 200px;
+        background-size: 140px;
     }
 
     .four {
-        background-size: 200px;
+        background-size: 150px;
     }
 
     // Help 
@@ -2050,6 +2228,24 @@ body {
     // Salary 
     .salary__info {
         margin-bottom: 10px;
+
+        max-height: 270px;
+
+        &-position-rang {
+            padding-bottom: 92px;
+        }
+
+        &-green {
+            background-size: 75%;
+        }
+
+        &-blue {
+            background-size: 75%;
+        }
+
+        &-red {
+            background-size: 70%;
+        }
     }
 
     .salary__info-position-rang-name {
