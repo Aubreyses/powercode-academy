@@ -1103,6 +1103,33 @@ body {
     &__block:last-child {
         margin-right: 0;
     }
+
+    &__scroll {
+        display: none;
+
+        padding-top: 26px;
+
+        margin: 0 auto;
+
+        &-point {
+            background-color: #39444F;
+
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+
+            margin-right: 10px;
+        }
+
+        &-point:last-child {
+            margin-right: 0;
+        }
+
+        &-point.active {
+            background-color: #EF5B63;
+        }
+    }
 }
 
 // Partners 
@@ -1516,6 +1543,15 @@ body {
     .about-us__info-main {
         font-size: 18px;
     }
+
+    // Partners 
+    .partners {
+        padding-top: 150px;
+
+        &__block-text {
+            font-size: 118px;
+        }
+    }
 }
 
 @media (max-width: 1210px) {
@@ -1570,6 +1606,15 @@ body {
         max-width: 460px;
     }
 
+    // Location
+    .questionary {
+        max-width: 485px;
+        right: 47px;
+    }
+
+    .location__map {
+        background-position-x: 56%;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -1682,6 +1727,23 @@ body {
         display: none;
     }
 
+    // Partners 
+    .partners {
+        padding-top: 120px;
+
+        &__block-text {
+            font-size: 102px;
+        }
+    }
+
+    // Location
+    .questionary {
+        max-width: 469px;
+
+        &__block-text {
+            font-size: 15px;
+        }
+    }
 }
 
 @media (max-width: 990px) {
@@ -1785,6 +1847,36 @@ body {
     .about-us__info-definition-title {
         text-align: left;
     }
+
+    // Partners 
+    .partners {
+        &__block {
+            height: auto;
+
+            &-text {
+                font-size: 46px;
+                line-height: 32px;
+                letter-spacing: 4px;
+    
+                color: #232F3C;
+    
+                position: static;
+            }
+
+            &-list {
+                padding-top: 37px;
+    
+                flex-direction: column;
+                position: static;
+    
+                &-name {
+                    margin-right: 0;
+    
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 900px) {
@@ -1798,6 +1890,23 @@ body {
         line-height: 31px;
 
         padding-bottom: 20px;
+    }
+
+    // Collage 
+    .collage {
+        padding-top: 75px;
+
+        &__container {
+            justify-content: center;
+        }
+
+        &__block {
+            margin-right: 0;
+    
+            &-reverse {
+                display: none;
+            }
+        }
     }
 }
 
@@ -1833,7 +1942,7 @@ body {
 @media (max-width: 770px)  {
     // Title 
     .title {
-        font-size: 24px;
+        font-size: 30px;
 
         padding-top: 30px;
         padding-bottom: 30px;
@@ -2023,9 +2132,23 @@ body {
 
         padding-left: 30px;
     }
+
+    // Partners 
+    .partners {
+        padding-top: 70px;
+
+        &__block-text {
+            font-size: 30px;
+        }
+    }
 }
 
 @media (max-width: 575px) {
+    // Title 
+    .title {
+        font-size: 24px;
+    }
+
     // Container 
     .container {
         padding: 0 20px;
@@ -2093,6 +2216,20 @@ body {
     // About us
     .about-us__info {
         max-width: 100%;
+    }
+
+    // Collage 
+    .collage {
+        padding-top: 50px;
+    }
+
+    // Partners 
+    .partners__block-text {
+        font-size: 24px;
+    }
+
+    .partners__block-list-name-img {
+        max-width: 258px;
     }
 }
 
@@ -2174,6 +2311,65 @@ body {
 
     .salary__info-position-income-bold {
         font-size: 34px;
+    }
+
+    // Collage
+    .collage {
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__block {
+            flex-direction: row;
+
+            &-line {
+                margin-bottom: 0;
+
+                &-second {
+                    display: none;
+                }
+            }
+
+            &-line-big {
+                margin-right: 0;
+
+                min-width: 260px;
+                max-width: 332px;
+            }
+
+            &-line-column {
+                display: none;
+                flex-direction: row;
+        
+                &-img {
+                    margin-bottom: 0;
+        
+                    min-width: 332px;
+                    max-width: 332px;
+
+                    display: none;
+                }
+            }
+
+            &-line-img-small {
+                min-width: 332px;
+                max-width: 332px;
+
+                display: none;
+            }
+
+            &-line-img-long {
+                min-width: 332px;
+                max-width: 332px;
+
+                display: none;
+            }
+        }
+
+        &__scroll {
+            display: flex;
+        }
     }
 }
 
