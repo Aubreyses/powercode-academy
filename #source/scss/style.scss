@@ -93,7 +93,7 @@ body {
     }
 
     &__link:last-child {
-        padding-right: 0;
+        margin-right: 0;
     }
 
     &__link:hover {
@@ -231,20 +231,29 @@ body {
 
 /* Questionary */
 .questionary {
-    width: 100%;
-    max-width: 509px;
     height: 574px;
 
     background-color: #232F3C;
 
     border-radius: 20px;
 
-    position: absolute;
-    top: -40px;
-    right: 67px;
+    position: relative;
+    z-index: 1;
+
+    &__container {
+        width: 100%;
+        max-width: 509px;
+
+        position: absolute;
+        top: -40px;
+        right: 68px;
+
+    }
 
     &__block {
         padding: 26px 36px;
+        
+        height: 574px;
 
         display: flex;
         flex-direction: column;
@@ -252,12 +261,11 @@ body {
 
         color: #fff;
 
-        position: relative;
-
         &-title {
             font-size: 44px;
             font-weight: 300;
             text-transform: uppercase;
+            letter-spacing: 4px;
 
             line-height: 58px;
 
@@ -273,6 +281,7 @@ body {
             font-size: 16px;
             font-weight: 400;
             line-height: 24px;
+            letter-spacing: 1px;
 
             padding-bottom: 26px;
         }
@@ -345,8 +354,8 @@ body {
             height: 73px;
 
             position: absolute;
-            top: 47px;
-            right: 47px;
+            top: 26px;
+            right: 36px;
         }
     }// BLock
 } // .questionary
@@ -1278,7 +1287,16 @@ body {
             position: absolute;
 
             right: 60px;
-            top: -100px;
+            top: -60px;
+        }
+
+        &-pin {
+            position: absolute;
+            top: 43%;
+            right: 51%;
+
+            width: 40px;
+            height: 48px;
         }
     }
 }// Location
@@ -1608,12 +1626,19 @@ body {
 
     // Location
     .questionary {
-        max-width: 485px;
-        right: 47px;
+
+        &__container {
+            max-width: 509px;
+            right: 48px;
+        }
     }
 
     .location__map {
         background-position-x: 56%;
+
+        &-pin {
+            right: 53%;
+        }
     }
 }
 
@@ -1738,11 +1763,21 @@ body {
 
     // Location
     .questionary {
-        max-width: 469px;
+        &__container {
+            max-width: 469px;
+        }
 
         &__block-text {
             font-size: 15px;
         }
+
+        &__block-title {
+            font-size: 38px;
+        }
+    }
+
+    .location__map-pin {
+        right: 54%;
     }
 }
 
@@ -1876,6 +1911,52 @@ body {
                 }
             }
         }
+    }
+
+    // Location 
+    .location {
+        padding-top: 160px;
+
+        &__container {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        &__map {
+            max-width: 469px;
+            margin: 0 auto;
+
+            justify-content: center;
+
+            background-position-x: 46%;
+
+            &-info {
+                justify-content: flex-start;
+                align-items: center;
+
+                padding: 36px;
+
+                &-city {
+                    margin-bottom: 36px;
+                }
+
+                &-block {
+                    margin-bottom: 86px;
+                }
+            }
+
+            &-pin {
+                right: 44%;
+            }
+        }
+    }
+
+    .questionary__container {
+        position: relative;
+        top: 0;
+        right: 0;
+
+        margin: 0 auto 30px auto;
     }
 }
 
@@ -2141,6 +2222,19 @@ body {
             font-size: 30px;
         }
     }
+
+    // Location 
+    .location {
+        padding-top: 90px;
+
+        &__map-info-social {
+            display: flex;
+    
+            &-link {
+                margin-right: 22px;
+            }
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -2231,9 +2325,39 @@ body {
     .partners__block-list-name-img {
         max-width: 258px;
     }
+
+    // Location 
+    .questionary__block-title {
+        font-size: 30px;
+        line-height: 46px;
+
+        padding-bottom: 16px;
+    }
+
+    .questionary__block-img {
+        width: 62px;
+        height: 62px;
+    }
+
+    .location__map-pin {
+        right: 45%;
+    }
+
+    .location__map-info-block-contacts-link {
+        font-size: 16px;
+    }
+
+    .location__map-figure {
+        right: 20px;
+    }
 }
 
 @media (max-width: 450px) {
+    // Container 
+    .container {
+        padding: 0 10px;
+    }
+
     // Home
         // Main 
         .main__container {
@@ -2371,6 +2495,30 @@ body {
             display: flex;
         }
     }
+
+    // Location 
+    .questionary__block-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .questionary__block-text {
+        font-size: 14px;
+    }
+
+    .questionary__block-img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .location__map-pin {
+        top: 45%;
+        right: 42%;
+    }
+
+    .location__map-figure {
+        max-width: 320px;
+    }
 }
 
 @media (max-width: 380px) {
@@ -2460,4 +2608,52 @@ body {
         font-size: 24px;
     }
 
+    // Location 
+    .questionary__block {
+        padding: 26px;
+
+        &-title {
+            font-size: 18px;
+        }
+
+        &-form-button {
+            font-size: 16px;
+        }
+
+        &-img {
+            top: 26px;
+            right: 26px;
+        }
+    }
+
+    .location__map-info-city-btn {
+        width: 116px;
+    }
+
+    .location__map-info-block-contacts-icon {
+        padding-right: 10px;
+    }
+
+    .location__map-info-block-contacts-link {
+        font-size: 14px;
+    }
+
+    .location__map-pin {
+        right: 39%;
+    }
+    
+    .location__map-figure {
+        max-width: 280px;
+
+        right: 15px;
+    }
+}
+
+@media (max-width: 335px) {
+    // Location 
+    .location__map-figure {
+        max-width: 269px;
+
+        right: 14px;
+    }
 }

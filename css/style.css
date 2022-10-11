@@ -136,7 +136,7 @@ body {
   transition: 0.3s linear;
 }
 .social__link:last-child {
-  padding-right: 0;
+  margin-right: 0;
 }
 .social__link:hover {
   transform: scale(1.1);
@@ -246,27 +246,32 @@ body {
 
 /* Questionary */
 .questionary {
-  width: 100%;
-  max-width: 509px;
   height: 574px;
   background-color: #232F3C;
   border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+.questionary__container {
+  width: 100%;
+  max-width: 509px;
   position: absolute;
   top: -40px;
-  right: 67px;
+  right: 68px;
 }
 .questionary__block {
   padding: 26px 36px;
+  height: 574px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   color: #fff;
-  position: relative;
 }
 .questionary__block-title {
   font-size: 44px;
   font-weight: 300;
   text-transform: uppercase;
+  letter-spacing: 4px;
   line-height: 58px;
   padding-bottom: 18px;
 }
@@ -278,6 +283,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: 1px;
   padding-bottom: 26px;
 }
 .questionary__block-form {
@@ -330,8 +336,8 @@ body {
   width: 73px;
   height: 73px;
   position: absolute;
-  top: 47px;
-  right: 47px;
+  top: 26px;
+  right: 36px;
 }
 
 .reguest__block-grey {
@@ -1003,7 +1009,14 @@ body {
 .location__map-figure {
   position: absolute;
   right: 60px;
-  top: -100px;
+  top: -60px;
+}
+.location__map-pin {
+  position: absolute;
+  top: 43%;
+  right: 51%;
+  width: 40px;
+  height: 48px;
 }
 
 .footer {
@@ -1260,13 +1273,16 @@ body {
     max-width: 460px;
   }
 
-  .questionary {
-    max-width: 485px;
-    right: 47px;
+  .questionary__container {
+    max-width: 509px;
+    right: 48px;
   }
 
   .location__map {
     background-position-x: 56%;
+  }
+  .location__map-pin {
+    right: 53%;
   }
 }
 @media (max-width: 1100px) {
@@ -1373,11 +1389,18 @@ body {
     font-size: 102px;
   }
 
-  .questionary {
+  .questionary__container {
     max-width: 469px;
   }
   .questionary__block-text {
     font-size: 15px;
+  }
+  .questionary__block-title {
+    font-size: 38px;
+  }
+
+  .location__map-pin {
+    right: 54%;
   }
 }
 @media (max-width: 990px) {
@@ -1486,6 +1509,41 @@ body {
   .partners__block-list-name {
     margin-right: 0;
     margin-bottom: 24px;
+  }
+
+  .location {
+    padding-top: 160px;
+  }
+  .location__container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .location__map {
+    max-width: 469px;
+    margin: 0 auto;
+    justify-content: center;
+    background-position-x: 46%;
+  }
+  .location__map-info {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 36px;
+  }
+  .location__map-info-city {
+    margin-bottom: 36px;
+  }
+  .location__map-info-block {
+    margin-bottom: 86px;
+  }
+  .location__map-pin {
+    right: 44%;
+  }
+
+  .questionary__container {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0 auto 30px auto;
   }
 }
 @media (max-width: 900px) {
@@ -1693,6 +1751,16 @@ body {
   .partners__block-text {
     font-size: 30px;
   }
+
+  .location {
+    padding-top: 90px;
+  }
+  .location__map-info-social {
+    display: flex;
+  }
+  .location__map-info-social-link {
+    margin-right: 22px;
+  }
 }
 @media (max-width: 575px) {
   .title {
@@ -1768,8 +1836,35 @@ body {
   .partners__block-list-name-img {
     max-width: 258px;
   }
+
+  .questionary__block-title {
+    font-size: 30px;
+    line-height: 46px;
+    padding-bottom: 16px;
+  }
+
+  .questionary__block-img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .location__map-pin {
+    right: 45%;
+  }
+
+  .location__map-info-block-contacts-link {
+    font-size: 16px;
+  }
+
+  .location__map-figure {
+    right: 20px;
+  }
 }
 @media (max-width: 450px) {
+  .container {
+    padding: 0 10px;
+  }
+
   .main__container {
     min-height: 520px;
   }
@@ -1877,6 +1972,29 @@ body {
   .collage__scroll {
     display: flex;
   }
+
+  .questionary__block-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .questionary__block-text {
+    font-size: 14px;
+  }
+
+  .questionary__block-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .location__map-pin {
+    top: 45%;
+    right: 42%;
+  }
+
+  .location__map-figure {
+    max-width: 320px;
+  }
 }
 @media (max-width: 380px) {
   .header__logo-icon-img {
@@ -1950,6 +2068,47 @@ body {
 
   .salary__info-position-income-bold {
     font-size: 24px;
+  }
+
+  .questionary__block {
+    padding: 26px;
+  }
+  .questionary__block-title {
+    font-size: 18px;
+  }
+  .questionary__block-form-button {
+    font-size: 16px;
+  }
+  .questionary__block-img {
+    top: 26px;
+    right: 26px;
+  }
+
+  .location__map-info-city-btn {
+    width: 116px;
+  }
+
+  .location__map-info-block-contacts-icon {
+    padding-right: 10px;
+  }
+
+  .location__map-info-block-contacts-link {
+    font-size: 14px;
+  }
+
+  .location__map-pin {
+    right: 39%;
+  }
+
+  .location__map-figure {
+    max-width: 280px;
+    right: 15px;
+  }
+}
+@media (max-width: 335px) {
+  .location__map-figure {
+    max-width: 269px;
+    right: 14px;
   }
 }
 
