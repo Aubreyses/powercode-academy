@@ -363,22 +363,31 @@ body {
 // Update for reguest-page
 .reguest__block-grey {
     color: #333;
+
+    justify-content: center;
+    padding: 36px 10px;
 }
 
 .reguest__form {
     max-width: 100%;
 }
 
+.reguest__block-text {
+    width: 480px;
+}
+
 .reguest__border-grey {
     border: #333 1px solid;
 
-    max-width: 100%;
+    width: 480px;
+    max-width: 480px;
 }
 
 .reguest__button {
     transition: .2s linear;
 
-    max-width: 100%;
+    width: 480px;
+    max-width: 480px;
 }
 
 .reguest__button:hover {
@@ -1303,11 +1312,12 @@ body {
 
 // Footer
 .footer {
-    padding-top: 110px;
+    padding-top: 120px;
     padding-bottom: 72px;
 
     &__block {
         width: 100%;
+        height: 100px;
 
         background-color: #F5F6F9;
         border-radius: 10px;
@@ -1456,6 +1466,7 @@ body {
 
 .main__reguest.active {
     display: flex;
+    align-items: center;
 }
 
 .main__questionary {
@@ -1469,7 +1480,10 @@ body {
 
 .reguest__block {
     &-title {
-        font-size: 42px;
+        font-size: 36px;
+        line-height: 48px;
+
+        width: 480px;
 
         span {
             font-weight: 700;
@@ -1570,6 +1584,19 @@ body {
             font-size: 118px;
         }
     }
+
+    // Reguest
+    .main__reguest-info-title {
+        font-size: 48px;
+    }
+
+    .main__reguest-info-text {
+        font-size: 22px;
+    }
+
+    .main__reguset-picture-img {
+        max-width: 350px;
+    }
 }
 
 @media (max-width: 1210px) {
@@ -1639,6 +1666,37 @@ body {
         &-pin {
             right: 53%;
         }
+    }
+
+    // Reguest
+    .reguest__block-title {
+        width: 400px;
+
+        font-size: 34px;
+    }
+
+    .reguest__block-text {
+        width: 400px;
+
+        font-size: 15px;
+    }
+
+    .reguest__border-grey {
+        width: 400px;
+        max-width: 400px;
+    }
+
+    .reguest__button {
+        width: 400px;
+        max-width: 400px;
+    }
+
+    .main__reguest-info-title {
+        font-size: 42px;
+    }
+
+    .main__reguest-info-text {
+        font-size: 18px;
     }
 }
 
@@ -1740,6 +1798,10 @@ body {
         }
     }
 
+    .about-us__info-definition::after {
+        height: 126px;
+    }
+
     .about-us__info-main {
         font-size: 20px;
     }
@@ -1778,6 +1840,35 @@ body {
 
     .location__map-pin {
         right: 54%;
+    }
+
+    // Reguest
+    .reguest__block-title {
+        width: 332px;
+
+        font-size: 34px;
+    }
+
+    .reguest__block-text {
+        width: 332px;
+    }
+
+    .reguest__border-grey {
+        width: 332px;
+        max-width: 332px;
+    }
+
+    .reguest__button {
+        width: 332px;
+        max-width: 332px;
+    }
+
+    .main__reguest-info-title {
+        font-size: 38px;
+    }
+
+    .main__reguset-picture-img {
+        max-width: 310px;
     }
 }
 
@@ -1951,12 +2042,60 @@ body {
         }
     }
 
+    .reguest__questionary {
+        background: none;
+    }
+
     .questionary__container {
         position: relative;
         top: 0;
         right: 0;
 
         margin: 0 auto 30px auto;
+    }
+
+    // Reguest
+    .reguest-main__picture-img {
+        display: none;
+    }
+
+    .main__reguest {
+        background: url(../img/questionary/reguest-bc.png) center no-repeat;
+        background-size: 350px;
+        background-position: top;
+
+        justify-content: center;
+        padding-top: 30px;
+
+        &-padding {
+            background: url(../img/questionary/reguest-exit-bc.png) center no-repeat;
+            background-position-y: 80%;
+
+            padding-top: 120px;
+
+            height: 500px;
+
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+
+    .main__reguest-info-title {
+        font-size: 34px;
+
+        width: 332px;
+    }
+
+    .main__reguest-info-text {
+        width: 332px;
+    }
+
+    .main__reguest-info-button {
+        max-width: 332px;
+    }
+
+    .main__reguset-picture-img {
+        display: none;
     }
 }
 
@@ -1987,6 +2126,13 @@ body {
             &-reverse {
                 display: none;
             }
+        }
+    }
+
+    // Reguest
+    .main__reguest {
+        &-padding {
+            background-size: 350px;
         }
     }
 }
@@ -2135,7 +2281,23 @@ body {
         
     // Courses
     .courses {
-        padding-bottom: 70px;
+        padding-bottom: 30px;
+
+        &__info {
+            padding-top: 30px;
+
+            &-block {
+                margin-bottom: 30px;
+            }
+
+            &-block:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__title {
+            padding-top: 0;
+        }
 
         &__version {
             flex-direction: column-reverse;
@@ -2154,11 +2316,12 @@ body {
 
     .block:last-child {
         margin-right: 25px;
+        margin-bottom: 0;
     }
 
     // Help 
     .help {
-        padding-bottom: 40px;
+        padding-bottom: 0;
 
         &__registration-title {
             font-size: 46px;
@@ -2188,7 +2351,7 @@ body {
 
     // About us
     .about-us__info-definition {
-        padding-top: 70px;
+        padding-top: 30px;
         padding-bottom: 15px;
         padding-left: 30px;
 
@@ -2208,6 +2371,11 @@ body {
         }
     }
 
+    // Collage 
+    .collage {
+        padding-top: 4px;
+    }
+
     .about-us__info-main {
         font-size: 18px;
 
@@ -2216,7 +2384,7 @@ body {
 
     // Partners 
     .partners {
-        padding-top: 70px;
+        padding-top: 30px;
 
         &__block-text {
             font-size: 30px;
@@ -2225,7 +2393,7 @@ body {
 
     // Location 
     .location {
-        padding-top: 90px;
+        padding-top: 60px;
 
         &__map-info-social {
             display: flex;
@@ -2233,6 +2401,23 @@ body {
             &-link {
                 margin-right: 22px;
             }
+        }
+    }
+
+    // Footer 
+    .footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        &__block {
+            height: 80px;
+        }
+    }
+
+    // Reguest
+    .main__reguest {
+        &-padding {
+            background-size: 350px;
         }
     }
 }
@@ -2312,11 +2497,6 @@ body {
         max-width: 100%;
     }
 
-    // Collage 
-    .collage {
-        padding-top: 50px;
-    }
-
     // Partners 
     .partners__block-text {
         font-size: 24px;
@@ -2349,6 +2529,35 @@ body {
 
     .location__map-figure {
         right: 20px;
+    }
+
+    // Footer 
+    .footer__block {
+        padding: 26px;
+
+        &-author {
+            font-size: 18px;
+        }
+    }
+
+    // Reguest
+    .main__reguest {
+        &-padding {
+            background-size: 350px;
+
+            padding-top: 30px;
+
+            background-position-y: 20%;
+        }
+    }
+
+    .reguest__block-title {
+        font-size: 34px;
+        line-height: 48px;
+    }
+
+    .reguest__block-text {
+        font-size: 15px;
     }
 }
 
@@ -2519,6 +2728,31 @@ body {
     .location__map-figure {
         max-width: 320px;
     }
+
+    // Footer
+    .footer__block {
+        padding: 26px 16px;
+
+        &-author {
+            font-size: 16px;
+        }
+    }
+
+    // Reguest
+    .main__reguest {
+        background-size: 95%;
+
+        padding-top: 30px;
+    }
+
+    .reguest__block-title {
+        font-size: 34px;
+        line-height: 48px;
+    }
+
+    .reguest__block-text {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 380px) {
@@ -2646,6 +2880,51 @@ body {
         max-width: 280px;
 
         right: 15px;
+    }
+
+    // Footer
+    .footer__block-author {
+        font-size: 14px;
+    }
+
+    .footer__block-turning-img {
+        width: 44px;
+    }
+
+    // Reguest
+    .reguest__block-title {
+        width: 280px;
+
+        font-size: 34px;
+        line-height: 48px;
+    }
+
+    .reguest__block-text {
+        width: 280px;
+
+        font-size: 15px;
+    }
+
+    .reguest__border-grey {
+        width: 280px;
+        max-width: 280px;
+    }
+
+    .reguest__button {
+        width: 280px;
+        max-width: 280px;
+    }
+
+    .main__reguest-info-title {
+        width: 280px;
+    }
+
+    .main__reguest-info-text {
+        width: 280px;
+    }
+
+    .main__reguest-info-button {
+        max-width: 280px;
     }
 }
 
