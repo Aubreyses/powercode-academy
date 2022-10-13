@@ -34,7 +34,7 @@ body {
     border-radius: 10px;
 
     transition: .3s linear;
-    }
+}
 
 .button:hover {
     background-color: rgb(241 73 82);
@@ -402,8 +402,6 @@ body {
     flex-direction: column;
 
     &-link {
-        color: #232F3C;
-
         text-transform: uppercase;
         font-size: 44px;
         font-weight: 700;
@@ -412,15 +410,19 @@ body {
 
         padding-bottom: 36px;
 
-        transition: .2s linear;
+        a {
+            color: #232F3C;
+
+            transition: .2s linear;
+        }
+
+        a:hover {
+            color: #EF5B63;
+        }
     }
 
     &-link:last-child {
         padding-bottom: 0;
-    }
-
-    &-link:hover {
-        color: #EF5B63;
     }
 }
 
@@ -452,6 +454,7 @@ body {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &__logo {
         align-items: center;
@@ -574,14 +577,14 @@ body {
             &-burger.active::after {
                 transform: rotate(45deg);
                 top: 0;
-                right: 0;
+                right: 1px;
                 transition: .2s linear;
             }
 
             &-burger.active::before {
                 transform: rotate(-45deg);
                 top: 0;
-                right: 0;
+                right: 1px;
                 transition: .2s linear;
             }
 
@@ -1024,6 +1027,8 @@ body {
 .collage {
     background-color: #fff;
 
+    overflow: hidden;
+
     padding-top: 120px;
 
     &__container {
@@ -1033,6 +1038,7 @@ body {
     &__block {
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
 
         margin-right: 30px;
 
@@ -1116,6 +1122,24 @@ body {
             margin-bottom: 0;
         }
     //Reverse
+
+    // Slider
+        &-slider {
+            display: none;
+            justify-content: flex-start;
+
+            width: 3950px;
+
+            transition: .3s linear;
+
+            &-img {
+                width: 340px;
+
+                border-radius: 20px;
+
+                margin-right: 50px;
+            }
+        }
     }
 
     &__block:last-child {
@@ -2185,6 +2209,10 @@ body {
             display: none;
         }
 
+        .header__contacts-menu:hover {
+            background: none;
+        }
+
         // Main
         .main {
             justify-content: center;
@@ -2231,7 +2259,9 @@ body {
 
                         font-size: 18px;
 
-                        margin-bottom: 40px;
+                        &-wrap {
+                            margin-bottom: 40px;
+                        }
                     }
 
                     &-video {
@@ -2384,7 +2414,7 @@ body {
 
     // Partners 
     .partners {
-        padding-top: 30px;
+        padding-top: 10px;
 
         &__block-text {
             font-size: 30px;
@@ -2654,49 +2684,15 @@ body {
         }
 
         &__block {
-            flex-direction: row;
-
             &-line {
-                margin-bottom: 0;
-
-                &-second {
-                    display: none;
-                }
-            }
-
-            &-line-big {
-                margin-right: 0;
-
-                min-width: 260px;
-                max-width: 332px;
-            }
-
-            &-line-column {
-                display: none;
-                flex-direction: row;
-        
-                &-img {
-                    margin-bottom: 0;
-        
-                    min-width: 332px;
-                    max-width: 332px;
-
-                    display: none;
-                }
-            }
-
-            &-line-img-small {
-                min-width: 332px;
-                max-width: 332px;
-
                 display: none;
             }
 
-            &-line-img-long {
-                min-width: 332px;
-                max-width: 332px;
+            &-slider {
+                display: flex;
 
-                display: none;
+                position: relative;
+                right: -1805px;
             }
         }
 
