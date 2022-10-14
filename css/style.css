@@ -898,13 +898,10 @@ body {
 .collage__block-slider {
   display: none;
   justify-content: flex-start;
-  width: 3950px;
   transition: 0.3s linear;
 }
 .collage__block-slider-img {
-  width: 340px;
   border-radius: 20px;
-  margin-right: 50px;
 }
 .collage__block:last-child {
   margin-right: 0;
@@ -2131,6 +2128,7 @@ body {
   .collage__container {
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
   .collage__block-line {
     display: none;
@@ -2138,7 +2136,6 @@ body {
   .collage__block-slider {
     display: flex;
     position: relative;
-    right: -1805px;
   }
   .collage__scroll {
     display: flex;

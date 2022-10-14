@@ -20,21 +20,44 @@ button.addEventListener('click', function(event) {
 });
 
 // Slider
-let offset = -1805;
-let numScrollPoint = 0;
-let sliderRight = offset;
+let windowWidth = document.documentElement.clientWidth; 
+
+
+const sliderImg = document.querySelectorAll('.collage__block-slider-img');
+for( let val of sliderImg ) { 
+    val.style.width = (windowWidth * 0.8) + "px";
+
+    val.style.marginLeft = (windowWidth * 0.1) + "px";
+    val.style.marginRight = (windowWidth * 0.1) + "px";
+}
+
+
+let offset = -(windowWidth);
+
+for( let val of sliderImg ) {
+    offset += windowWidth;
+};
+
+let startSlider = 0 - (offset / 2); // -1539px
+let currentSlide = startSlider;
+let finishSlider = offset / 2; // 1539px
+
 
 const sliderLine = document.querySelector('.collage__block-slider');
-const sliderImg = document.querySelectorAll('.collage__block-slider-img');
+sliderLine.style.right = startSlider + "px";
+
+
 const scrollPoint = document.querySelectorAll('.collage__scroll-point');
 
 let scrollPointMap = new Map();
+let currentSlideVal = startSlider;
 
 for ( let scrollPointNum of scrollPoint ) {
-   scrollPointMap.set(scrollPointNum, sliderRight); 
+    scrollPointMap.set(scrollPointNum, currentSlideVal); 
 
-   sliderRight += 390;
+    currentSlideVal += windowWidth;
 };
+
 
 for( let [key, values] of scrollPointMap ) {
     key.addEventListener( 'click', function(event) {
@@ -42,27 +65,27 @@ for( let [key, values] of scrollPointMap ) {
 
         key.classList.toggle('active');
 
-        offset = values;
+        currentSlide = values;
 
         for( let [key, values] of scrollPointMap ) {
-            if( offset != values ) key.classList.remove('active');
+            if( currentSlide != values ) key.classList.remove('active');
         };
     } );
 };
 
 for (let image of sliderImg) {
     image.addEventListener( 'click', function(event) {
-        offset += 390;
+        currentSlide += windowWidth;
 
-        if ( offset > 1705 ) {
-            offset = -1805;
+        if ( currentSlide > finishSlider ) {
+            currentSlide = startSlider;
         };
 
-        sliderLine.style.right = offset + 'px';
+        sliderLine.style.right = currentSlide + 'px';
 
 
         for( let [key, values] of scrollPointMap ) {
-            if( offset == values ) {
+            if( currentSlide == values ) {
                 key.classList.toggle('active');
             } else {
                 key.classList.remove('active');
