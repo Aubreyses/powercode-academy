@@ -72,6 +72,7 @@ body {
 
 .regime__button.passive {
     transition: .2s linear;
+    color: #333;
 }
 
 .regime__button.passive:hover {
@@ -2733,7 +2734,7 @@ body {
     .main__reguest {
         background-size: 95%;
 
-        padding-top: 30px;
+        padding-top: 0;
     }
 
     .reguest__block-title {

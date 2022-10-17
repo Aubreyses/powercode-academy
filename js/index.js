@@ -19,6 +19,21 @@ button.addEventListener('click', function(event) {
     }
 });
 
+
+// Scroll
+const anchor = document.querySelector('.footer__block-turning[href*="#"]');
+
+anchor.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const blockId = anchor.getAttribute('href');
+    document.querySelector('' + blockId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+    });
+});
+
+
 // Slider
 let windowWidth = document.documentElement.clientWidth; 
 
@@ -73,6 +88,7 @@ for( let [key, values] of scrollPointMap ) {
     } );
 };
 
+
 for (let image of sliderImg) {
     image.addEventListener( 'click', function(event) {
         currentSlide += windowWidth;
@@ -94,6 +110,40 @@ for (let image of sliderImg) {
     } );
 };
 
+// Regime button
+    const coursesBtn = document.querySelectorAll('.courses__version-regime-btn');
+    
+    for( let button of coursesBtn ) {
+        button.addEventListener('click', function(event) {
+
+            for( let button of coursesBtn) {
+                if( button.classList.contains('active')) {
+                    button.classList.remove('active');
+                    button.classList.toggle('passive');
+                };
+            };
+
+            button.classList.remove('passive');
+            button.classList.toggle('active');
+        });
+    };
+
+    const locationBtn = document.querySelectorAll('.location__map-info-city-btn');
+
+    for( let button of locationBtn ) {
+        button.addEventListener('click', function(event) {
+
+            for( let button of locationBtn) {
+                if( button.classList.contains('active')) {
+                    button.classList.remove('active');
+                    button.classList.toggle('location__map-info-city-btn-grey');
+                };
+            };
+
+            button.classList.remove('location__map-info-city-btn-grey');
+            button.classList.toggle('active');
+        });
+    };
 
 
 
