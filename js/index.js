@@ -1,118 +1,136 @@
 "use strict"
 
 // Burger
-const main = document.querySelectorAll( '.main' );
-const mainNav = document.querySelector( '.main__nav' );
+function showBurger( selectorMain, selectorButton, selectorBurger ) {
 
-const button = document.querySelector( '.header__contacts-menu' );
-const burger = button.lastElementChild;
+    const main = document.querySelectorAll( selectorMain );
+    const button = document.querySelector( selectorButton );
+    const burger = document.querySelector( selectorBurger );
 
-button.addEventListener('click', function(event) {
-    if( event.target.closest( '.header__contacts-menu' )) {
-        burger.classList.toggle( 'active' ); 
-    }
+    button.addEventListener('click', function(event) {
+        if( event.target.closest( selectorButton )) {
+            burger.classList.toggle( 'active' ); 
+        }
+    
+        if(event.target.closest( selectorButton )) {
+            for ( let mainClassName of main ) {
+                mainClassName.classList.toggle( 'active' );
+            };
+        }
+    });
+};
 
-    if(event.target.closest( '.header__contacts-menu' )) {
-        for ( let mainClassName of main ) {
-            mainClassName.classList.toggle( 'active' );
-        };
-    }
-});
+showBurger( '.main', '.header__contacts-menu', '.header__contacts-menu-burger' );
 
 
 // Scroll
-const anchor = document.querySelector('.footer__block-turning[href*="#"]');
+function scroll( selectorsAnchor ) {
 
-anchor.addEventListener('click', function(event) {
-    event.preventDefault();
+    const anchor = document.querySelector( selectorsAnchor )
 
-    const blockId = anchor.getAttribute('href');
-    document.querySelector('' + blockId).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+    anchor.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        const blockId = anchor.getAttribute('href');
+        document.querySelector('' + blockId).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
     });
-});
+
+};
+
+scroll( '.footer__block-turning[href*="#"]' );
 
 
 // Slider
-let windowWidth = document.documentElement.clientWidth; 
+function slider( selectorSliderImg, selectorSliderLine, selectorScrollPoint ) {
 
+    const sliderImg = document.querySelectorAll( selectorSliderImg );
+    const sliderLine = document.querySelector( selectorSliderLine );
+    const scrollPoint = document.querySelectorAll( selectorScrollPoint );
 
-const sliderImg = document.querySelectorAll('.collage__block-slider-img');
-for( let val of sliderImg ) { 
-    val.style.width = (windowWidth * 0.8) + "px";
+    function sliderWork( sliderImg, sliderLine, scrollPoint ) {
 
-    val.style.marginLeft = (windowWidth * 0.1) + "px";
-    val.style.marginRight = (windowWidth * 0.1) + "px";
-}
+        let windowWidth = document.documentElement.clientWidth;
 
+        for( let image of sliderImg ) { 
+            image.style.width = (windowWidth * 0.8) + "px";
+        
+            image.style.marginLeft = (windowWidth * 0.1) + "px";
+            image.style.marginRight = (windowWidth * 0.1) + "px";
+        }
 
-let offset = -(windowWidth);
+        let offset = -(windowWidth);
 
-for( let val of sliderImg ) {
-    offset += windowWidth;
-};
-
-let startSlider = 0 - (offset / 2); // -1539px
-let currentSlide = startSlider;
-let finishSlider = offset / 2; // 1539px
-
-
-const sliderLine = document.querySelector('.collage__block-slider');
-sliderLine.style.right = startSlider + "px";
-
-
-const scrollPoint = document.querySelectorAll('.collage__scroll-point');
-
-let scrollPointMap = new Map();
-let currentSlideVal = startSlider;
-
-for ( let scrollPointNum of scrollPoint ) {
-    scrollPointMap.set(scrollPointNum, currentSlideVal); 
-
-    currentSlideVal += windowWidth;
-};
-
-
-for( let [key, values] of scrollPointMap ) {
-    key.addEventListener( 'click', function(event) {
-        sliderLine.style.right = values + 'px';
-
-        key.classList.toggle('active');
-
-        currentSlide = values;
-
-        for( let [key, values] of scrollPointMap ) {
-            if( currentSlide != values ) key.classList.remove('active');
-        };
-    } );
-};
-
-
-for (let image of sliderImg) {
-    image.addEventListener( 'click', function(event) {
-        currentSlide += windowWidth;
-
-        if ( currentSlide > finishSlider ) {
-            currentSlide = startSlider;
+        for( let val of sliderImg ) {
+            offset += windowWidth;
         };
 
-        sliderLine.style.right = currentSlide + 'px';
+        let startSlider = 0 - (offset / 2); 
+        let currentSlide = startSlider;
+        let finishSlider = offset / 2;
+
+        sliderLine.style.right = startSlider + "px";
+
+        let scrollPointMap = new Map();
+        let currentSlideVal = startSlider;
+
+        for ( let scrollPointNum of scrollPoint ) {
+            scrollPointMap.set(scrollPointNum, currentSlideVal); 
+
+            currentSlideVal += windowWidth;
+        };
 
 
         for( let [key, values] of scrollPointMap ) {
-            if( currentSlide == values ) {
+            key.addEventListener( 'click', function(event) {
+                sliderLine.style.right = values + 'px';
+
                 key.classList.toggle('active');
-            } else {
-                key.classList.remove('active');
-            };
+
+                currentSlide = values;
+
+                for( let [key, values] of scrollPointMap ) {
+                    if( currentSlide != values ) key.classList.remove('active');
+                };
+            } );
         };
-    } );
+
+
+        for (let image of sliderImg) {
+            image.addEventListener( 'click', function(event) {
+                currentSlide += windowWidth;
+
+                if ( currentSlide > finishSlider ) {
+                    currentSlide = startSlider;
+                };
+
+                sliderLine.style.right = currentSlide + 'px';
+
+
+                for( let [key, values] of scrollPointMap ) {
+                    if( currentSlide == values ) {
+                        key.classList.toggle('active');
+                    } else {
+                        key.classList.remove('active');
+                    };
+                };
+            } );
+        } 
+    }
+
+    sliderWork( sliderImg, sliderLine, scrollPoint );
 };
+
+slider( '.collage__block-slider-img', '.collage__block-slider', '.collage__scroll-point' );
+
 
 // Regime button
-    const coursesBtn = document.querySelectorAll('.courses__version-regime-btn');
-    
+function regimeButton( selectorCoursesBtn, selectorLocationBtn ) {
+    const coursesBtn = document.querySelectorAll( selectorCoursesBtn );
+    const locationBtn = document.querySelectorAll( selectorLocationBtn );
+
     for( let button of coursesBtn ) {
         button.addEventListener('click', function(event) {
 
@@ -128,8 +146,6 @@ for (let image of sliderImg) {
         });
     };
 
-    const locationBtn = document.querySelectorAll('.location__map-info-city-btn');
-
     for( let button of locationBtn ) {
         button.addEventListener('click', function(event) {
 
@@ -144,9 +160,6 @@ for (let image of sliderImg) {
             button.classList.toggle('active');
         });
     };
+}
 
-
-
-
-
-
+regimeButton( '.courses__version-regime-btn', '.location__map-info-city-btn' );
